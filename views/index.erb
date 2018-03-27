@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Suffragist</title>
+    <link href='//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css' rel='stylesheet' />
+</head>
+<body class="container">
+    <h1><%= @title %></h1>
+    <p>What's for dinner?</p>
+    <form action="cast" method="post">
+        <ul class="unstyled">
+            <% CHOICES.each do |id, text| %>
+                <li>
+                    <label class="radio">
+                        <input type="radio" name="vote" value="<%= id %>" id="vote_<%= id %>" />
+                        <%= text %>
+                    </label>
+                </li>
+            <% end %>
+        </ul>
+        <button type="submit" class="btn btn-primary">Cast your vote!</button>
+    </form>    
+</body>
+</html>
